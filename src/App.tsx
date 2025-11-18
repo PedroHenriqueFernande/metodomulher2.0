@@ -1,8 +1,7 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X, ThumbsDown, Frown, Smile } from 'lucide-react';
+import { Brain, Check, Lock, Shield, Sparkles, Volume2, VolumeX, ThumbsDown, Frown, Smile } from 'lucide-react';
 import CTAButton from './components/CTAButton';
 import Timer from './components/Timer';
-import Testimonial from './components/Testimonial';
 import FAQ from './components/FAQ';
 import ProgressBar from './components/ProgressBar';
 import AboutJuliana from './components/AboutJuliana';
@@ -263,9 +262,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
             <p>
               A Chave Para Reprogramação Mental corrige exatamente esse circuito. Ela ensina sua mente a parar de te bloquear e começar a te impulsionar. Quando o circuito muda, o vazio some e a autossabotagem perde força.
             </p>
-            <p>
-              No final, só existe uma escolha: assumir o controle agora ou continuar sendo controlada pela própria mente.
-            </p>
+
           </div>
           <CTAButton />
         </div>
