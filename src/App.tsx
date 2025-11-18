@@ -1,5 +1,5 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X } from 'lucide-react';
+import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X, ThumbsDown } from 'lucide-react';
 import CTAButton from './components/CTAButton';
 import Timer from './components/Timer';
 import Testimonial from './components/Testimonial';
@@ -69,17 +69,17 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white overflow-x-hidden">
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(240,213,140,0.1),transparent_50%)]" />
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-tight">
+        <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
+          <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08]">
             A autossabotagem sempre vai te dominar, até <span className="text-gold-shine inline-block">você aprender a vencer sua mente.</span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
             Este é o método comprovado cientificamente que +5.000 mulheres utilizam para transformar suas mentes e quebrar padrões que pareciam impossíveis de vencer, recuperando o brilho e a prosperidade que você nunca deveria ter perdido.
           </p>
 
@@ -123,17 +123,17 @@ function App() {
             <p>Ele foi criado para te proteger de frustrações antigas, mas aprendeu a fazer isso da pior maneira possível:</p>
           </div>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-center md:text-left mb-12">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
             {[
-              { title: 'Te travando', icon: Lock },
-              { title: 'Te drenando', icon: Shield },
-              { title: 'Te fazendo procrastinar', icon: MessageCircle },
-              { title: 'Te convencendo a desistir', icon: X },
-              { title: 'Te jogando de volta para velhos hábitos', icon: Sparkles },
+              { title: 'Te travando', icon: ThumbsDown },
+              { title: 'Te drenando', icon: ThumbsDown },
+              { title: 'Te fazendo procrastinar', icon: ThumbsDown },
+              { title: 'Te convencendo a desistir', icon: ThumbsDown },
+              { title: 'Te jogando para Velhos Hábitos', icon: ThumbsDown },
             ].map((item, index) => (
               <div
                 key={index}
-                className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-center md:items-start gap-3 justify-center md:justify-start"
+                className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-start gap-3"
               >
                 <item.icon className="w-6 h-6 text-gold flex-shrink-0" />
                 <p className="text-[#F7F4EE]/90 leading-relaxed text-base md:text-lg">{item.title}</p>
@@ -149,7 +149,7 @@ function App() {
             Para evitar que você “sofra de novo”, ele cria atalhos emocionais:
           </p>
 
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-center md:text-left mb-12">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
             {[
               'desânimo repentino',
               'cansaço do nada',
@@ -159,7 +159,7 @@ function App() {
             ].map((item, index) => (
               <div
                 key={index}
-                className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-center md:items-start gap-3 justify-center md:justify-start"
+                className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-start gap-3"
               >
                 <Sparkles className="w-5 h-5 text-gold flex-shrink-0" />
                 <p className="text-[#F7F4EE]/90 leading-relaxed text-base md:text-lg capitalize">{item}</p>
@@ -185,7 +185,7 @@ function App() {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-center md:items-start gap-3"
+                  className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-start gap-3"
                 >
                   <Check className="w-6 h-6 text-gold flex-shrink-0" />
                   <p className="text-[#F7F4EE]/90 leading-relaxed text-base md:text-lg">{item}</p>

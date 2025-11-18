@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 @font-face {
   font-family: 'Heavitas';
   src: url('/fonts/Heavitas.ttf') format('truetype');
@@ -70,6 +80,14 @@
 
 .text-gold {
   color: var(--gold-solid);
+}
+
+.responsive-copy,
+.responsive-copy * {
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 
