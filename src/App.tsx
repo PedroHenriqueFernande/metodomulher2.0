@@ -1,5 +1,5 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Brain, Check, Lock, Shield, Sparkles, Volume2, VolumeX, ThumbsDown, Frown, Smile } from 'lucide-react';
+import { Brain, Check, Lock, Shield, Sparkles, Volume2, VolumeX, ThumbsDown, Frown, Smile, Play, Pause } from 'lucide-react';
 import CTAButton from './components/CTAButton';
 import Timer from './components/Timer';
 import FAQ from './components/FAQ';
@@ -9,61 +9,8 @@ import AboutJuliana from './components/AboutJuliana';
 function App() {
   const [progress, setProgress] = useState(0);
   const [isMuted, setIsMuted] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const isAndroid = /Android/i.test(navigator.userAgent || '');
-    const startMuted = isAndroid; // Android Chrome exige mudo para autoplay.
-
-    video.playsInline = true;
-    video.muted = startMuted;
-    setIsMuted(startMuted);
-
-    const tryPlay = () => {
-      video.play().catch(() => {
-        /* Autoplay pode ser bloqueado; nova tentativa ocorre em eventos abaixo. */
-      });
-    };
-
-    const unmuteAndPlay = () => {
-      video.muted = false;
-      setIsMuted(false);
-      tryPlay();
-    };
-
-    // Tentativas iniciais (imediata + retry curto).
-    tryPlay();
-    const retry = window.setTimeout(tryPlay, 300);
-
-    // Reforço ao carregar dados.
-    const onLoaded = () => tryPlay();
-    video.addEventListener('loadeddata', onLoaded);
-    video.addEventListener('canplay', onLoaded);
-
-    // No Android, tenta desmutar assim que começar a tocar (após autoplay mudo).
-    const onPlaying = () => {
-      if (video.muted) {
-        window.setTimeout(unmuteAndPlay, 150);
-      }
-    };
-    video.addEventListener('playing', onPlaying);
-
-    // Fallback: primeiro gesto do usuário garante som.
-    window.addEventListener('touchstart', unmuteAndPlay, { once: true });
-    window.addEventListener('click', unmuteAndPlay, { once: true });
-
-    return () => {
-      window.clearTimeout(retry);
-      video.removeEventListener('loadeddata', onLoaded);
-      video.removeEventListener('canplay', onLoaded);
-      video.removeEventListener('playing', onPlaying);
-      window.removeEventListener('touchstart', unmuteAndPlay);
-      window.removeEventListener('click', unmuteAndPlay);
-    };
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -103,6 +50,17 @@ function App() {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
+    }
+  };
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
@@ -161,15 +119,16 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                   ref={videoRef}
                   className="w-full h-full object-cover"
                   src="/VSL.mp4"
-                  autoPlay
-                  loop
                   muted={isMuted}
                   playsInline
                   preload="auto"
-                  onLoadedData={() => videoRef.current?.play().catch(() => {})}
-                  onCanPlay={() => videoRef.current?.play().catch(() => {})}
                   onTimeUpdate={handleTimeUpdate}
                 />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <button onClick={togglePlay} className="text-white bg-black/50 rounded-full p-4">
+                    {isPlaying ? <Pause size={40} /> : <Play size={40} />}
+                  </button>
+                </div>
                 <div className="absolute top-4 right-4">
                   <button onClick={toggleMute} className="text-white bg-black/50 rounded-full p-2">
                     {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
