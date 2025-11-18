@@ -210,7 +210,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
           <div className="mt-12 text-center space-y-6 text-lg md:text-xl text-[#F7F4EE]/85 max-w-4xl mx-auto">
             <p>
-              Ele te protege do que já passou e te impede de construir o que você quer. Faz isso do pior jeito possível: paralisando, drenando e acovardando você. E o mais cruel é que isso não acontece porque você "quer". Acontece por causa de um processo oculto em sua mente, chamado "Circuito da Proteção Invertida" um padrão automático que tenta evitar a dor, mas acaba te prendendo nos mesmos ciclos que destroem sua evolução. Mas existe uma forma de corrigir isso, e a neurociência utiliza a neuroplasticidade para ajudar seu cérebro a atingir a reconexão neural: quando você treina seu cérebro para responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional.
+              Ele te protege do passado e te impede de evoluir. Paralisa, drena e te faz recuar. O pior? Isso não é escolha sua. É um padrão oculto chamado "Circuito da Proteção Invertida", que tenta evitar dor, mas te prende nos mesmos ciclos de estagnação. A boa notícia: seu cérebro pode ser reprogramado. Usando neuroplasticidade, você cria novas respostas, novos caminhos e muda seu comportamento emocional.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
