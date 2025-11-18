@@ -65,6 +65,32 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const sections = document.querySelectorAll('.fade-in-section');
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
+  }, []);
+
   const handleTimeUpdate = () => {
     if (videoRef.current) {
       const { currentTime, duration } = videoRef.current;
@@ -118,7 +144,7 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white overflow-x-hidden responsive-copy">
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20">
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20 fade-in-section">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(240,213,140,0.1),transparent_50%)]" />
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
@@ -161,7 +187,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* O CIRCUITO DA PROTEÇÃO INVERTIDA */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-5xl mx-auto text-center">
                     <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você te <span className="text-wine-shine">sabotando em silêncio.</span></h2>
                     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
@@ -249,7 +275,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       <AboutJuliana />
 
       {/* A CHAVE PARA A REPROGRAMAÇÃO MENTAL */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-6xl text-[#F7F4EE] mb-8">
             A CHAVE PARA A REPROGRAMAÇÃO MENTAL
@@ -269,7 +295,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* POR QUE ISSO FUNCIONA */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Brain className="w-12 h-12 text-gold" />
@@ -315,7 +341,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* O QUE VOCÊ VAI RECEBER */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-16">
             O QUE VOCÊ RECEBE
@@ -345,7 +371,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* COMO FUNCIONA NA PRÁTICA */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             COMO FUNCIONA NA PRÁTICA?
@@ -375,7 +401,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* DEPOIMENTOS */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             ELAS ESTÃO MUDANDO SUAS VIDAS
@@ -414,7 +440,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* PRÉVIA */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-12">
             UMA PRÉVIA DO QUE TE ESPERA
@@ -447,7 +473,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* PARA QUEM É */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             ESSE MÉTODO FOI FEITO PARA VOCÊ
@@ -476,7 +502,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       </section>
 
       {/* OFERTA/B?NUS/VALOR/FAQ/FOOTER (mantidos) */}
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-10 animate-pulse-scale">
             <div className="text-center">
@@ -526,7 +552,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
 
 
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             Essa é a decisão que muda tudo.
@@ -605,7 +631,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
 
 
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-8 md:p-12 rounded-3xl border border-[#D8C28A]/20 text-center">
             <Shield className="w-20 h-20 text-gold mx-auto mb-6" />
@@ -626,7 +652,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
       <FAQ />
 
-      <section className="py-20 px-6">
+      <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-12">
             Está pronta para retomar o controle?
