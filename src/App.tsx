@@ -69,7 +69,7 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(216,194,138,0.1),transparent_50%)]" />
@@ -337,7 +337,7 @@ function App() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
               <img
-                src="/prova 1.PNG.png"
+                src="/1.PNG"
                 alt="Depoimento 1"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -345,7 +345,7 @@ function App() {
             </div>
             <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
               <img
-                src="/prova 2.png"
+                src="/2.PNG"
                 alt="Depoimento 2"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -353,7 +353,7 @@ function App() {
             </div>
             <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
               <img
-                src="/prova 3.png"
+                src="/3.PNG"
                 alt="Depoimento 3"
                 className="w-full h-full object-cover"
                 loading="lazy"
@@ -457,58 +457,14 @@ function App() {
         </div>
       </section>
 
+
+
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
-            VALOR TOTAL DA TRANSFORMAÇÃO
+            Essa é a decisão que muda tudo.
           </h2>
-
-          <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-8 md:p-12 rounded-3xl border border-gold-shine/20">
-            <div className="space-y-4 mb-8">
-              {[
-                { item: 'A Chave da Reprogramação Mental', value: 'R$149' },
-                { item: 'Bônus Ansiedade', value: 'R$49' },
-                { item: 'Checklist diário', value: 'R$29' },
-                { item: 'Áudio emergencial', value: 'R$19' },
-              ].map((row, index) => (
-                <div key={index} className="flex justify-between items-center text-lg">
-                  <span className="text-[#F7F4EE]/80">{row.item}</span>
-                  <span className="text-[#F7F4EE]/80 line-through">{row.value}</span>
-                </div>
-              ))}
-            </div>
-
-            <div className="border-t border-gold-shine/20 pt-6 mb-8">
-              <div className="flex justify-between items-center text-xl mb-4">
-                <span className="text-[#F7F4EE]">Valor real:</span>
-                <span className="text-[#F7F4EE] line-through">R$246</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span className="text-gold text-3xl font-bold">HOJE:</span>
-                <span className="text-gold text-5xl font-bold">R$39,90</span>
-              </div>
-            </div>
-
-            <CTAButton />
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-8">
-            POR QUE ESTA OFERTA ACABA HOJE?
-          </h2>
-
-          <p className="text-xl text-[#F7F4EE]/90 leading-relaxed">
-            O valor promocional está disponível porque o método está em expansão. Assim que a turma diária for preenchida, o preço retorna ao normal.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="p-1 rounded-3xl mb-12 bg-gold-shine opacity-10">
+          <div className="p-1 rounded-3xl mb-12 bg-gold-shine">
             <div className="bg-black p-8 md:p-12 rounded-[22px] text-center">
               <h3 className="font-serif text-3xl md:text-4xl text-[#F7F4EE] mb-6">
                 Esta Oferta Expira Em:
@@ -520,9 +476,49 @@ function App() {
             </div>
           </div>
 
-          <CTAButton />
+          <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-8 md:p-12 rounded-3xl border border-gold-shine/20">
+            <div className="space-y-4 mb-8">
+              {[
+                { item: 'A Chave da Reprogramação', value: 'R$99,90' },
+                { item: 'Bônus - O Fim da Ansiedade', value: 'R$99,90' },
+                { item: 'Protocolo de Ação Rápida', value: 'R$49,90' },
+                { item: 'Rituais Mentais Diários', value: 'R$49,90' },
+                { item: 'Como recuperar Sua Inteligência Emocional', value: 'R$49,90' },
+                { item: 'Áudios de Reprogramação Mental', value: 'R$29,90' },
+                { item: 'Mapa da Autossabotagem', value: 'R$19,90' },
+
+              ].map((row, index) => (
+                <div key={index} className="grid grid-cols-2 items-center text-lg">
+                  <span className="text-[#F7F4EE]/80">{row.item}</span>
+                  <span className="text-[#F7F4EE]/80 line-through justify-self-end">{row.value}</span>
+                </div>
+              ))}
+            </div>
+
+            <div className="border-t border-gold-shine/20 pt-6 mb-8">
+              <div className="grid grid-cols-2 items-center text-xl mb-4">
+                <span className="text-[#F7F4EE]">Valor real:</span>
+                <span className="text-[#F7F4EE] line-through justify-self-end">R$398,30</span>
+              </div>
+              <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+                <span className="text-gold text-3xl font-bold">HOJE:</span>
+                <div className="flex flex-col items-center gap-2">
+                  <span className="bg-gold-shine text-black font-bold px-3 py-1 rounded-md text-base animate-pulse">
+                    89% OFF
+                  </span>
+                  <span className="text-gold text-5xl font-bold">R$39,90</span>
+                </div>
+              </div>
+            </div>
+
+            <CTAButton />
+          </div>
         </div>
       </section>
+
+
+
+
 
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">

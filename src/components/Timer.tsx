@@ -2,32 +2,43 @@ import { useEffect, useState } from 'react';
 
 export default function Timer() {
   const [timeLeft, setTimeLeft] = useState({
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
+    hours: 2,
+    minutes: 37,
+    seconds: 45,
   });
 
   useEffect(() => {
-    const calculateTimeLeft = () => {
-      const now = new Date();
-      const endOfDay = new Date();
-      endOfDay.setHours(23, 59, 59, 999);
+    let timer: NodeJS.Timeout;
 
-      const difference = endOfDay.getTime() - now.getTime();
+    const tick = () => {
+      setTimeLeft((prevTime) => {
+        let { hours, minutes, seconds } = prevTime;
 
-      if (difference > 0) {
-        setTimeLeft({
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        });
-      }
+        if (hours === 0 && minutes === 0 && seconds === 0) {
+          return prevTime; // Stop at 00:00:00
+        }
+
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          seconds = 59;
+          if (minutes > 0) {
+            minutes--;
+          } else {
+            minutes = 59;
+            if (hours > 0) {
+              hours--;
+            }
+          }
+        }
+        return { hours, minutes, seconds };
+      });
+      timer = setTimeout(tick, 1000);
     };
 
-    calculateTimeLeft();
-    const timer = setInterval(calculateTimeLeft, 1000);
+    timer = setTimeout(tick, 1000);
 
-    return () => clearInterval(timer);
+    return () => clearTimeout(timer);
   }, []);
 
   return (
