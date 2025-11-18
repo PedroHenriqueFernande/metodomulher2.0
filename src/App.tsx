@@ -1,5 +1,5 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X, ThumbsDown, Frown } from 'lucide-react';
+import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X, ThumbsDown, Frown, Smile } from 'lucide-react';
 import CTAButton from './components/CTAButton';
 import Timer from './components/Timer';
 import Testimonial from './components/Testimonial';
@@ -80,7 +80,7 @@ function App() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Este é o método comprovado cientificamente que +5.000 mulheres utilizam para transformar suas mentes e quebrar padrões de autossabotagem que pareciam impossíveis de vencer, recuperando o brilho e a prosperidade que você nunca deveria ter perdido.
+            Se você sente que luta contra si mesma, é porque sua mente te domina. Eu tenho a solução para virar esse jogo. Está na hora de ensinar sua mente a te seguir e transformar na sua versão que sempre sonhou, mas nunca alcançou...até agora.
           </p>
 
           <div className="mb-10 flex justify-center">
@@ -114,7 +114,7 @@ function App() {
       {/* O CIRCUITO DA PROTEÇÃO INVERTIDA */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">O Circuito da Proteção Invertida</h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você <span className="text-wine-shine">te sabotando em silêncio.</span></h2>
           <div className="space-y-6 text-lg md:text-xl text-[#F7F4EE]/90 leading-relaxed mb-12 max-w-3xl mx-auto">
             <p>Você já reparou que parte de você quer mudar… mas outra parte faz você desistir?</p>
             <p>
@@ -161,18 +161,15 @@ function App() {
                 key={index}
                 className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-start gap-3"
               >
-                <Sparkles className="w-5 h-5 text-gold flex-shrink-0" />
+                <Frown className="w-5 h-5 text-gold flex-shrink-0" />
                 <p className="text-[#F7F4EE]/90 leading-relaxed text-base md:text-lg capitalize">{item}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 text-left space-y-6 text-lg md:text-xl text-[#F7F4EE]/85 max-w-4xl mx-auto">
+          <div className="mt-12 text-center space-y-6 text-lg md:text-xl text-[#F7F4EE]/85 max-w-4xl mx-auto">
             <p>
-              Ele te protege do que já passou e te impede do que você quer construir. Esse circuito tenta evitar que você se machuque, mas faz isso do pior jeito possível: te paralisando, te drenando, te fazendo repetir ciclos que você odeia e travando a sua evolução. Ele não te defende. Ele te prende.
-            </p>
-            <p>
-              Mas existe um jeito de corrigir isso, que a neurociência chama de reconexão neural: quando você treina o cérebro a responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional. A Chave da Reprogramação Mental age diretamente nesse ponto crítico:
+              Ele te protege do que já passou e te impede do que você quer construir. Faz isso do pior jeito possível: te paralisando, te drenando, te acovardando. Mas existe um jeito de corrigir isso, e a solução a neurociência chama de reconexão neural: quando você treina o cérebro a responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional. A Chave da Reprogramação Mental trabalha para te tirar desse ciclo, busca trazer de volta a sua reconexão neural:
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -187,12 +184,12 @@ function App() {
                   key={index}
                   className="h-full bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-5 rounded-2xl border border-gold-shine/20 flex items-start gap-3"
                 >
-                  <Check className="w-6 h-6 text-gold flex-shrink-0" />
-                  <p className="text-[#F7F4EE]/90 leading-relaxed text-base md:text-lg">{item}</p>
+                  <Smile className="w-6 h-6 text-gold flex-shrink-0" />
+                  <p className="text-[#F7F4EE]/90 leading-relaxed text-base md:text-lg text-left">{item}</p>
                 </div>
               ))}
             </div>
-            <p className="text-[#F7F4EE] font-semibold text-xl">
+            <p className="text-wine-shine font-semibold text-xl">
               Esse método não é apenas um método comum, é um método pensado para você acabar de vez com esse inimigo invisível que está acabando com sua vida aos poucos.
             </p>
           </div>
@@ -202,6 +199,13 @@ function App() {
           </div>
         </div>
       </section>
+
+
+
+
+
+      {/* SOBRE JULIANA */}
+      <AboutJuliana />
 
       {/* A CHAVE PARA A REPROGRAMAÇÃO MENTAL */}
       <section className="py-20 px-6">
@@ -213,9 +217,7 @@ function App() {
             <p>
               Você não está travada. É a sua mente te protegendo do jeito errado: ela te sabota, drena sua energia e te faz acreditar que nunca vai vencer. Isso não é fraqueza, entenda que não é culpa sua. É um padrão automático que age antes de você perceber. 
             </p>
-            <p>
-              A neurociência chama isso de <span className="text-rose-300 font-semibold">Circuito da Proteção Invertida</span>: o momento em que o seu cérebro tenta evitar a dor, mas te paralisa repetindo os mesmos ciclos que machucam.
-            </p>
+
             <p>
               A Chave Para Reprogramação Mental corrige exatamente esse circuito. Ela ensina sua mente a parar de te bloquear e começar a te impulsionar. Quando o circuito muda, o vazio some e a autossabotagem perde força.
             </p>
@@ -226,9 +228,6 @@ function App() {
           <CTAButton />
         </div>
       </section>
-
-      {/* SOBRE JULIANA */}
-      <AboutJuliana />
 
       {/* POR QUE ISSO FUNCIONA */}
       <section className="py-20 px-6">
@@ -243,17 +242,17 @@ function App() {
           <div className="grid md:grid-cols-3 gap-6 text-left">
             {[
               {
-                icon: Frown,
+                icon: Brain,
                 title: 'Neuroplasticidade',
                 text: 'O seu cérebro não é fixo. Ele se molda, se adapta, se reconstrói. Esse fenômeno chama-se neuroplasticidade.',
               },
               {
-                icon: Frown,
+                icon: Sparkles,
                 title: 'Trilhas Mentais',
                 text: 'Cada pensamento que você repete cria uma trilha neural. Cada crença limitante que você alimenta se fortalece.',
               },
               {
-                icon: Frown,
+                icon: Lock,
                 title: 'Reprogramação',
                 text: 'Mas o oposto também é verdade: você pode reprogramar essas trilhas, criar novos caminhos e ensinar o seu cérebro a acreditar em você novamente.',
               },
@@ -330,32 +329,32 @@ function App() {
       {/* DEPOIMENTOS */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-16">
+          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             O QUE ELAS ESTÃO DIZENDO
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine overflow-hidden">
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-solid border-gold flex items-center justify-center overflow-hidden">
               <img
                 src="/1.PNG"
                 alt="Depoimento 1"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine overflow-hidden">
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-solid border-gold flex items-center justify-center overflow-hidden">
               <img
                 src="/2.PNG"
                 alt="Depoimento 2"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine overflow-hidden">
+            <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-solid border-gold flex items-center justify-center overflow-hidden">
               <img
                 src="/3.PNG"
                 alt="Depoimento 3"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
@@ -378,13 +377,14 @@ function App() {
             ].map((item) => (
               <div
                 key={item.id}
-                className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden"
+                className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden"
               >
                 <img
                   src={item.src}
                   alt={item.alt}
                   className="w-full h-full object-contain"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             ))}
@@ -396,16 +396,16 @@ function App() {
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
-            PARA QUEM ESTE MÉTODO FOI FEITO
+            ESSE MÉTODO FOI FEITO PARA VOCÊ
           </h2>
 
           <div className="grid md:grid-cols-1 gap-8">
             <div className="space-y-4">
-              <h3 className="text-gold text-2xl font-semibold mb-6">É para você se:</h3>
+
               {[
-                'Você começa e trava no meio',
                 'Sente que a própria mente atrapalha',
                 'Vive repetindo os mesmos ciclos',
+                'Você começa e trava no meio',
                 'Busca clareza emocional e leveza',
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -507,7 +507,7 @@ function App() {
                     <span className="absolute -top-4 -right-4 bg-gold-shine text-black font-bold px-2 py-1 rounded-md text-xs animate-pulse">
                       89% OFF
                     </span>
-                    <span className="text-gold text-5xl font-bold">R$39,90</span>
+                    <span className="text-gold text-4xl md:text-5xl font-bold">R$39,90</span>
                   </div>
                 </div>
               </div>

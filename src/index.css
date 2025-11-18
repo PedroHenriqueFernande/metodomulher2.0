@@ -17,6 +17,7 @@ body,
   src: url('/fonts/Heavitas.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 :root {
@@ -46,7 +47,7 @@ body,
 .text-wine-shine {
   background-image: var(--wine-gradient);
   background-size: 220% 220%;
-  background-position: 50% 50%;
+  background-position: 200% center;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -58,7 +59,7 @@ body,
 .text-gold-shine {
   background-image: var(--gold-gradient);
   background-size: 220% 220%;
-  background-position: 50% 50%;
+  background-position: 200% center;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
@@ -83,16 +84,19 @@ body,
 }
 
 @keyframes shine {
-  to {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
     background-position: -200% center;
   }
 }
 
 .bg-gold-shine {
   background-image: var(--gold-gradient);
-  background-size: 220% 220%;
-  background-position: 50% 50%;
-  animation: shine 4s linear infinite;
+  background-size: 400% 400%;
+  background-position: 200% center;
+  animation: shine 2s linear infinite;
   will-change: background-position;
 }
 
