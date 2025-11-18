@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import CTAButton from './CTAButton';
 
 interface FAQItemProps {
   question: string;
@@ -73,6 +74,9 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
+        </div>
+        <div className="mt-12 flex justify-center">
+          <CTAButton />
         </div>
       </div>
     </section>

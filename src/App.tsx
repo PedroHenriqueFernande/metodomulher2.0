@@ -76,10 +76,10 @@ function App() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
           <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08] max-w-4xl mx-auto text-balance">
-            Se você não dominar sua mente, ela <span className="text-wine-shine whitespace-normal break-words">domina você.</span>
+A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespace-normal break-words">FUNDO DO POÇO</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Se você sente que luta contra si mesma… é porque um padrão escondido está vencendo por você. Ele opera no silêncio, decide no seu lugar e te empurra para os mesmos ciclos que você tenta escapar. Você sente a trava, o aperto, a dúvida, mas nunca vê de onde isso vem. E enquanto esse padrão existir, ele vai continuar controlando seus passos…sem que você perceba que não está no comando.
+            Se você sente que luta contra si mesma… é porque um padrão escondido está vencendo por você. Ele opera no silêncio, decide no seu lugar e te empurra para os mesmos ciclos que você tenta escapar. Você sente o aperto, a dúvida, mas nunca vê de onde isso vem. E enquanto esse padrão existir, ele vai continuar controlando seus passos…sem que você perceba que não está no comando.
           </p>
           <div className="mb-10 flex justify-center">
             <div className="relative max-w-xs w-full aspect-[9/16] bg-gold-shine p-1 rounded-3xl shadow-2xl">
@@ -132,7 +132,7 @@ function App() {
           </div>
 
           <h3 className="font-serif text-3xl md:text-4xl text-[#F7F4EE] mb-4">
-            PORQUE ESSE CIRCUITO EXISTE?
+            O QUE ESTÁ TE ATRAPALHANDO A PROGREDIR?
           </h3>
           <p className="text-lg md:text-xl text-[#F7F4EE]/80 mb-8 max-w-3xl mx-auto">
             Seu cérebro aprendeu, ao longo da vida, que certas emoções como frustração, cobrança, rejeição ou falha são perigosas.
@@ -159,7 +159,7 @@ function App() {
 
           <div className="mt-12 text-center space-y-6 text-lg md:text-xl text-[#F7F4EE]/85 max-w-4xl mx-auto">
             <p>
-              Ele te protege do que já passou e te impede do que você quer construir. Faz isso do pior jeito possível: te paralisando, te drenando, te acovardando. Mas existe um jeito de corrigir isso, e a solução a neurociência chama de reconexão neural: quando você treina o cérebro a responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional. A Chave da Reprogramação Mental trabalha para te tirar desse ciclo, busca trazer de volta a sua reconexão neural:
+              Ele te protege do que já passou e te impede do que você quer construir. Faz isso do pior jeito possível: te paralisando, te drenando, te acovardando. E o mais cruel é que isso não acontece porque você “quer”. Acontece por causa de um processo oculto dentro da sua mente chamado o Circuito da Proteção Invertida, um padrão automático que tenta evitar dor, mas acaba te prendendo nos mesmos ciclos que destroem sua evolução. Mas existe um jeito de corrigir isso, e a neurociência utiliza a neuroplasticidade para fazer seu cérebro atingir a reconexão neural: quando você treina o cérebro a responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -259,6 +259,9 @@ function App() {
               </div>
             ))}
           </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
+          </div>
         </div>
       </section>
 
@@ -266,10 +269,10 @@ function App() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-16">
-            O QUE VEM NESSE MEGA PACOTE?
+            O QUE VOCÊ RECEBE
           </h2>
           <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mb-10">
-            Com esse método, além do produto principal, você levará +7 Bônus Exclusivos juntos:
+            Com esse método, além do produto principal, você levará Bônus Exclusivos juntos:
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -285,6 +288,9 @@ function App() {
                 <p className="text-[#F7F4EE]/80 leading-relaxed">{item.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
           </div>
         </div>
       </section>
@@ -313,6 +319,9 @@ function App() {
               </div>
             ))}
           </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
+          </div>
         </div>
       </section>
 
@@ -320,7 +329,7 @@ function App() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
-            O QUE ELAS ESTÃO DIZENDO
+            ELAS ESTÃO MUDANDO SUAS VIDAS
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -348,6 +357,9 @@ function App() {
                 loading="lazy"
               />
             </div>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
           </div>
         </div>
       </section>
@@ -379,6 +391,9 @@ function App() {
               </div>
             ))}
           </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
+          </div>
         </div>
       </section>
 
@@ -405,6 +420,9 @@ function App() {
               ))}
             </div>
           </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
+          </div>
         </div>
       </section>
 
@@ -425,10 +443,17 @@ function App() {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-8 rounded-2xl border border-gold-shine/30 mb-8">
+                <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-8 rounded-2xl border border-gold-shine/30 mb-8 text-center">
                   <h3 className="text-gold text-2xl font-semibold mb-4">
-                    O Fim da Ansiedade - Aprenda a Silenciar o Caos
+                    O Fim da Ansiedade <br /> Aprenda a silenciar o caos
                   </h3>
+                  <div className="flex justify-center my-4">
+                    <img
+                      src="/foto capa.png"
+                      alt="O Fim da Ansiedade - Aprenda a Silenciar o Caos"
+                      className="max-w-[10rem] h-auto rounded-lg shadow-lg"
+                    />
+                  </div>
                   <p className="text-[#F7F4EE]/90 text-lg leading-relaxed">
                     Eu sei como a ansiedade te domina e rouba sua paz. Mas existe um interruptor dentro da sua mente, e este bônus te mostra como acioná-lo. Quando você ativa esse poder, o caos se silencia e o medo perde força.
                   </p>
@@ -444,6 +469,7 @@ function App() {
           <div className="flex justify-center mt-10">
             <CTAButton />
           </div>
+
         </div>
       </section>
 
@@ -454,6 +480,9 @@ function App() {
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             Essa é a decisão que muda tudo.
           </h2>
+          <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mb-10">
+            A diferença entre repetir os mesmos ciclos e finalmente quebrá-los está aqui, agora. Você já adiou demais. Agora é o momento de agir, e só agora esses descontos estão liberados pra você.
+          </p>
           <div className="p-1 rounded-3xl mb-12 bg-gold-shine">
             <div className="bg-black p-8 md:p-12 rounded-[22px] text-center">
               <h3 className="font-serif text-3xl md:text-4xl text-[#F7F4EE] mb-6">
@@ -504,6 +533,9 @@ function App() {
             </div>
 
             <CTAButton />
+            <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mt-4">
+              A única coisa entre você e a mudança é um clique, não deixe passar essa chance.
+            </p>
           </div>
         </div>
       </section>
@@ -524,6 +556,9 @@ function App() {
             <p className="text-xl text-[#F7F4EE]/90 leading-relaxed">
               Se em 30 dias você não sentir clareza mental maior, redução das travas e melhora emocional, devolvemos 100% do valor, sem perguntas, sem burocracia.
             </p>
+          </div>
+          <div className="mt-12 flex justify-center">
+            <CTAButton />
           </div>
         </div>
       </section>

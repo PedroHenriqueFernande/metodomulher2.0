@@ -1,7 +1,7 @@
 import CTAButton from './CTAButton';
 
 const AboutJuliana = () => {
-  const fullText = "Meu nome é Juliana, tenho 35 anos e sinceramente, eu andava tão cansada. Por muito tempo, acreditei que a tristeza e o vazio era algo que nunca ia sumir de dentro de mim. Tinha medo de fazer planos, de nada sair da maneira certa. Até entender que era a minha mente tentando me proteger, mas na verdade, ela só estava me destruindo. Foi quando mergulhei na neurociência e estudando, descobri como reprogramar esses padrões. Dessa forma criei o método que transformou a minha vida e hoje já ajudou mais de 5.000 mulheres a retomarem o controle da própria mente. Você não precisa lutar contra si mesma. Só precisa aprender a reprogramar a sua mente. Venha comigo nessa jornada e acabe de maneira definitiva com tudo isso!";
+  const fullText = "Meu nome é Juliana, tenho 35 anosin e sinceramente, eu andava tão cansada. Por muito tempo, acreditei que a tristeza e o vazio era algo que nunca ia sumir de dentro de mim. Tinha medo de fazer planos, de nada sair da maneira certa. Até entender que era a minha mente tentando me proteger, mas na verdade, ela só estava me destruindo. Foi quando mergulhei na neurociência e estudando, descobri como reprogramar esses padrões através da neuroplasticidade. Dessa forma criei o método que transformou a minha vida e hoje já ajudou mais de 5.000 mulheres a retomarem o controle da própria mente. Você não precisa lutar contra si mesma. Só precisa aprender a reprogramar a sua mente. Venha comigo nessa jornada e acabe de maneira definitiva com tudo isso!";
 
   return (
     <section className="py-20 px-6">
