@@ -16,6 +16,8 @@ const AboutJuliana = () => {
               src="/Juliana.png"
               alt="Juliana"
               className="w-32 h-32 rounded-full object-cover object-center border-2 border-gold-shine/50"
+              loading="lazy"
+              decoding="async"
             />
           </div>
 

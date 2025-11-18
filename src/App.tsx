@@ -504,6 +504,8 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                       src="/foto capa.png"
                       alt="O Fim da Ansiedade - Aprenda a Silenciar o Caos"
                       className="max-w-[10rem] h-auto rounded-lg shadow-lg"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   <p className="text-[#F7F4EE]/90 text-lg leading-relaxed">

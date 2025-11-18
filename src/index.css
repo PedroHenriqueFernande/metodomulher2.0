@@ -21,6 +21,7 @@ body,
 }
 
 :root {
+  color-scheme: light;
   --gold-gradient: linear-gradient(
     120deg,
     #7e5c2f 0%,
@@ -42,6 +43,12 @@ body,
     #4A0404 100%
   );
   --gold-solid: #d5b978;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: light;
+  }
 }
 
 .text-wine-shine {
