@@ -624,6 +624,8 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
           <CTAButton className="mb-12" />
 
+          <p className="text-sm text-[#F7F4EE]/70 mt-4">Plataforma de Pagamento 100% Segura</p>
+
           <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
             <div className="flex items-center gap-2 text-gold">
               <Shield className="w-6 h-6" />
