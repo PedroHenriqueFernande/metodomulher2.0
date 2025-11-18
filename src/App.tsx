@@ -1,5 +1,5 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X, ThumbsDown } from 'lucide-react';
+import { Brain, Check, Lock, MessageCircle, Shield, Sparkles, Volume2, VolumeX, X, ThumbsDown, Frown } from 'lucide-react';
 import CTAButton from './components/CTAButton';
 import Timer from './components/Timer';
 import Testimonial from './components/Testimonial';
@@ -76,11 +76,11 @@ function App() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
           <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08] max-w-4xl mx-auto text-balance">
-            A autossabotagem sempre vai te dominar, até <span className="text-gold-shine whitespace-normal break-words">você aprender a vencer sua mente.</span>
+            Se você não dominar sua mente, ela <span className="text-wine-shine whitespace-normal break-words">domina você.</span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Este é o método comprovado cientificamente que +5.000 mulheres utilizam para transformar suas mentes e quebrar padrões que pareciam impossíveis de vencer, recuperando o brilho e a prosperidade que você nunca deveria ter perdido.
+            Este é o método comprovado cientificamente que +5.000 mulheres utilizam para transformar suas mentes e quebrar padrões de autossabotagem que pareciam impossíveis de vencer, recuperando o brilho e a prosperidade que você nunca deveria ter perdido.
           </p>
 
           <div className="mb-10 flex justify-center">
@@ -243,17 +243,17 @@ function App() {
           <div className="grid md:grid-cols-3 gap-6 text-left">
             {[
               {
-                icon: Brain,
+                icon: Frown,
                 title: 'Neuroplasticidade',
                 text: 'O seu cérebro não é fixo. Ele se molda, se adapta, se reconstrói. Esse fenômeno chama-se neuroplasticidade.',
               },
               {
-                icon: Sparkles,
+                icon: Frown,
                 title: 'Trilhas Mentais',
                 text: 'Cada pensamento que você repete cria uma trilha neural. Cada crença limitante que você alimenta se fortalece.',
               },
               {
-                icon: Lock,
+                icon: Frown,
                 title: 'Reprogramação',
                 text: 'Mas o oposto também é verdade: você pode reprogramar essas trilhas, criar novos caminhos e ensinar o seu cérebro a acreditar em você novamente.',
               },

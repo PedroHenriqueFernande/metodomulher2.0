@@ -30,7 +30,29 @@ body,
     #8b6a2b 82%,
     #f7e9b7 100%
   );
+  --wine-gradient: linear-gradient(
+    120deg,
+    #4A0404 0%,
+    #800000 18%,
+    #B22222 36%,
+    #DC143C 50%,
+    #B22222 68%,
+    #800000 82%,
+    #4A0404 100%
+  );
   --gold-solid: #d5b978;
+}
+
+.text-wine-shine {
+  background-image: var(--wine-gradient);
+  background-size: 220% 220%;
+  background-position: 50% 50%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+  will-change: background-position;
 }
 
 .text-gold-shine {
