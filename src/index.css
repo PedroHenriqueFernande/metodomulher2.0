@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Heavitas';
+  src: url('/fonts/Heavitas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-gold-shine {
+  background: linear-gradient(90deg, #BF953F 0%, #FCF6BA 30%, #B38728 50%, #FCF6BA 70%, #BF953F 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-scale {
+  animation: pulse-scale 2.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.bg-gold-shine {
+  background: linear-gradient(90deg, #BF953F 0%, #FCF6BA 30%, #B38728 50%, #FCF6BA 70%, #BF953F 100%);
+  background-size: 200% auto;
+  animation: shine 3s linear infinite;
+}
+
+.border-gold-shine {
+  border-image: linear-gradient(90deg, #BF953F 0%, #FCF6BA 20%, #B38728 40%, #FCF6BA 60%, #BF953F 80%) 1;
+}
+
+.text-gold {
+  color: #BF953F;
+}
+
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(216, 194, 138, 0.4);
+  }
+  50% {
+    transform: scale(1.01);
+    box-shadow: 0 0 10px rgba(216, 194, 138, 0.6);
+  }
+}
+
+.animation-pulse-subtle {
+  animation: pulse-subtle 2s infinite ease-in-out;
+}
+
+.animate-shine-button {
+  animation: shine-button 3s infinite;
+}
+
+@keyframes shine-button {
+  0% {
+    transform: translateX(-100%) skewX(-30deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.text-gold-metallic {
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
