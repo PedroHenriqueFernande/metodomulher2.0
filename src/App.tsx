@@ -500,13 +500,15 @@ function App() {
                 <span className="text-[#F7F4EE]">Valor real:</span>
                 <span className="text-[#F7F4EE] line-through justify-self-end">R$398,30</span>
               </div>
-              <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
-                <span className="text-gold text-3xl font-bold">HOJE:</span>
-                <div className="flex flex-col items-center gap-2">
-                  <span className="bg-gold-shine text-black font-bold px-3 py-1 rounded-md text-base animate-pulse">
-                    89% OFF
-                  </span>
-                  <span className="text-gold text-5xl font-bold">R$39,90</span>
+              <div className="flex flex-col items-center gap-4">
+                <div className="flex items-center gap-4">
+                  <span className="text-gold text-3xl font-bold">HOJE:</span>
+                  <div className="relative">
+                    <span className="absolute -top-4 -right-4 bg-gold-shine text-black font-bold px-2 py-1 rounded-md text-xs animate-pulse">
+                      89% OFF
+                    </span>
+                    <span className="text-gold text-5xl font-bold">R$39,90</span>
+                  </div>
                 </div>
               </div>
             </div>
