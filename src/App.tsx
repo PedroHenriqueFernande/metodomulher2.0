@@ -114,7 +114,7 @@ function App() {
       {/* O CIRCUITO DA PROTEÇÃO INVERTIDA */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você <span className="text-wine-shine">te sabotando em silêncio.</span></h2>
+          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você te <span className="text-wine-shine">sabotando em silêncio.</span></h2>
           <div className="space-y-6 text-lg md:text-xl text-[#F7F4EE]/90 leading-relaxed mb-12 max-w-3xl mx-auto">
             <p>Você já reparou que parte de você quer mudar… mas outra parte faz você desistir?</p>
             <p>
