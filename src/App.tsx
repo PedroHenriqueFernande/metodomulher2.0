@@ -13,9 +13,37 @@ function App() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch((error) => console.error('Autoplay was prevented:', error));
-    }
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = false;
+    setIsMuted(false);
+
+    const tryPlay = () => {
+      video.play().catch(() => {
+        /* Autoplay with sound can be blocked; retry on user gesture. */
+      });
+    };
+
+    // Initial attempts (immediate + short retry after hydration).
+    tryPlay();
+    const retry = window.setTimeout(tryPlay, 300);
+
+    // Fallback: as soon as user interacts, unmute and play.
+    const onUserGesture = () => {
+      video.muted = false;
+      setIsMuted(false);
+      tryPlay();
+    };
+
+    window.addEventListener('touchstart', onUserGesture, { once: true });
+    window.addEventListener('click', onUserGesture, { once: true });
+
+    return () => {
+      window.clearTimeout(retry);
+      window.removeEventListener('touchstart', onUserGesture);
+      window.removeEventListener('click', onUserGesture);
+    };
   }, []);
 
   const handleTimeUpdate = () => {
@@ -92,6 +120,9 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                   loop
                   muted={isMuted}
                   playsInline
+                  preload="auto"
+                  onLoadedData={() => videoRef.current?.play().catch(() => {})}
+                  onCanPlay={() => videoRef.current?.play().catch(() => {})}
                   onTimeUpdate={handleTimeUpdate}
                 />
                 <div className="absolute top-4 right-4">
@@ -482,7 +513,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
             Essa é a decisão que muda tudo.
           </h2>
           <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mb-10">
-            A diferença entre repetir os mesmos ciclos e finalmente quebrá-los está aqui, agora. Você já adiou demais. Agora é o momento de agir, e só agora esses descontos estão liberados pra você.
+            A diferença entre repetir os mesmos ciclos e finalmente quebrá-los está aqui, agora. Agora é o momento de agir, e só agora esses descontos estão liberados pra você.
           </p>
           <div className="p-1 rounded-3xl mb-12 bg-gold-shine">
             <div className="bg-black p-8 md:p-12 rounded-[22px] text-center">
