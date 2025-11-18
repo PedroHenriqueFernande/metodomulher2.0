@@ -1,10 +1,11 @@
-﻿import { useEffect, useRef, useState } from 'react';
+﻿import { useEffect, useRef, useState, lazy, Suspense } from 'react';
 import { Brain, Check, Lock, Shield, Sparkles, Volume2, VolumeX, ThumbsDown, Frown, Smile, Play, Pause } from 'lucide-react';
 import CTAButton from './components/CTAButton';
 import Timer from './components/Timer';
-import FAQ from './components/FAQ';
 import ProgressBar from './components/ProgressBar';
-import AboutJuliana from './components/AboutJuliana';
+
+const FAQ = lazy(() => import('./components/FAQ'));
+const AboutJuliana = lazy(() => import('./components/AboutJuliana'));
 
 function App() {
   const [progress, setProgress] = useState(0);
@@ -121,7 +122,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                   src="/VSL.mp4"
                   muted={isMuted}
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   onTimeUpdate={handleTimeUpdate}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -231,7 +232,9 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
 
       {/* SOBRE JULIANA */}
-      <AboutJuliana />
+      <Suspense fallback={null}>
+        <AboutJuliana />
+      </Suspense>
 
       {/* A CHAVE PARA A REPROGRAMAÇÃO MENTAL */}
       <section className="py-20 px-6 fade-in-section">
@@ -373,6 +376,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                 alt="Depoimento 1"
                 className="w-full h-full object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-solid border-gold flex items-center justify-center overflow-hidden">
@@ -381,6 +385,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                 alt="Depoimento 2"
                 className="w-full h-full object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
             <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-solid border-gold flex items-center justify-center overflow-hidden">
@@ -389,6 +394,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                 alt="Depoimento 3"
                 className="w-full h-full object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -463,9 +469,9 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       {/* OFERTA/B?NUS/VALOR/FAQ/FOOTER (mantidos) */}
       <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-10 animate-pulse-scale">
+          <div className="space-y-10 animate-glow">
             <div className="text-center">
-              <span className="inline-flex items-center justify-center bg-gold-shine text-black font-extrabold px-8 md:px-12 py-4 md:py-5 rounded-full text-2xl md:text-4xl uppercase tracking-[0.25em] drop-shadow-[0_0_25px_rgba(240,213,140,0.65)]">
+              <span className="inline-flex items-center justify-center bg-gold-shine text-black font-extrabold px-8 md:px-12 py-4 md:py-5 rounded-full text-2xl md:text-4xl uppercase tracking-[0.25em]">
                 Promoção exclusiva da Black Friday
               </span>
             </div>
@@ -609,7 +615,9 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
         </div>
       </section>
 
-      <FAQ />
+      <Suspense fallback={null}>
+        <FAQ />
+      </Suspense>
 
       <section className="py-20 px-6 fade-in-section">
         <div className="max-w-4xl mx-auto text-center">
@@ -651,3 +659,5 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 }
 
 export default App;
+
+

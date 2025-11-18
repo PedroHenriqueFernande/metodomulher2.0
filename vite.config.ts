@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, splitVendorChunkPlugin } from 'vite';
 import react from '@vitejs/plugin-react';
 import compression from 'vite-plugin-compression';
 
@@ -6,6 +6,7 @@ import compression from 'vite-plugin-compression';
 export default defineConfig({
   plugins: [
     react(),
+    splitVendorChunkPlugin(),
     compression({
       algorithm: 'brotliCompress',
       ext: '.br',
@@ -17,5 +18,12 @@ export default defineConfig({
   ],
   optimizeDeps: {
     exclude: ['lucide-react'],
+  },
+  build: {
+    minify: 'esbuild',
+    cssMinify: 'esbuild',
+    modulePreload: {
+      polyfill: false,
+    },
   },
 });
