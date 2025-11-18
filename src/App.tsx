@@ -16,33 +16,53 @@ function App() {
     const video = videoRef.current;
     if (!video) return;
 
-    video.muted = false;
-    setIsMuted(false);
+    const isAndroid = /Android/i.test(navigator.userAgent || '');
+    const startMuted = isAndroid; // Android Chrome exige mudo para autoplay.
+
+    video.playsInline = true;
+    video.muted = startMuted;
+    setIsMuted(startMuted);
 
     const tryPlay = () => {
       video.play().catch(() => {
-        /* Autoplay with sound can be blocked; retry on user gesture. */
+        /* Autoplay pode ser bloqueado; nova tentativa ocorre em eventos abaixo. */
       });
     };
 
-    // Initial attempts (immediate + short retry after hydration).
-    tryPlay();
-    const retry = window.setTimeout(tryPlay, 300);
-
-    // Fallback: as soon as user interacts, unmute and play.
-    const onUserGesture = () => {
+    const unmuteAndPlay = () => {
       video.muted = false;
       setIsMuted(false);
       tryPlay();
     };
 
-    window.addEventListener('touchstart', onUserGesture, { once: true });
-    window.addEventListener('click', onUserGesture, { once: true });
+    // Tentativas iniciais (imediata + retry curto).
+    tryPlay();
+    const retry = window.setTimeout(tryPlay, 300);
+
+    // Reforço ao carregar dados.
+    const onLoaded = () => tryPlay();
+    video.addEventListener('loadeddata', onLoaded);
+    video.addEventListener('canplay', onLoaded);
+
+    // No Android, tenta desmutar assim que começar a tocar (após autoplay mudo).
+    const onPlaying = () => {
+      if (video.muted) {
+        window.setTimeout(unmuteAndPlay, 150);
+      }
+    };
+    video.addEventListener('playing', onPlaying);
+
+    // Fallback: primeiro gesto do usuário garante som.
+    window.addEventListener('touchstart', unmuteAndPlay, { once: true });
+    window.addEventListener('click', unmuteAndPlay, { once: true });
 
     return () => {
       window.clearTimeout(retry);
-      window.removeEventListener('touchstart', onUserGesture);
-      window.removeEventListener('click', onUserGesture);
+      video.removeEventListener('loadeddata', onLoaded);
+      video.removeEventListener('canplay', onLoaded);
+      video.removeEventListener('playing', onPlaying);
+      window.removeEventListener('touchstart', unmuteAndPlay);
+      window.removeEventListener('click', unmuteAndPlay);
     };
   }, []);
 
