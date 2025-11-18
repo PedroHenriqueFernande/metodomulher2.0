@@ -9,7 +9,7 @@ import AboutJuliana from './components/AboutJuliana';
 
 function App() {
   const [progress, setProgress] = useState(0);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -72,7 +72,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(216,194,138,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(240,213,140,0.1),transparent_50%)]" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
           <h1 className="font-headline text-5xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-tight">
@@ -92,7 +92,6 @@ function App() {
                   src="/VSL.mp4"
                   autoPlay
                   loop
-                  muted
                   playsInline
                   onTimeUpdate={handleTimeUpdate}
                 />
@@ -339,7 +338,7 @@ function App() {
               <img
                 src="/1.PNG"
                 alt="Depoimento 1"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
@@ -347,7 +346,7 @@ function App() {
               <img
                 src="/2.PNG"
                 alt="Depoimento 2"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
@@ -355,7 +354,7 @@ function App() {
               <img
                 src="/3.PNG"
                 alt="Depoimento 3"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </div>
@@ -383,7 +382,7 @@ function App() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                   loading="lazy"
                 />
               </div>
@@ -423,7 +422,7 @@ function App() {
         <div className="max-w-4xl mx-auto">
           <div className="space-y-10 animate-pulse-scale">
             <div className="text-center">
-              <span className="inline-flex items-center justify-center bg-gold-shine text-black font-extrabold px-8 md:px-12 py-4 md:py-5 rounded-full text-2xl md:text-4xl uppercase tracking-[0.25em] drop-shadow-[0_0_25px_rgba(217,193,138,0.6)]">
+              <span className="inline-flex items-center justify-center bg-gold-shine text-black font-extrabold px-8 md:px-12 py-4 md:py-5 rounded-full text-2xl md:text-4xl uppercase tracking-[0.25em] drop-shadow-[0_0_25px_rgba(240,213,140,0.65)]">
                 Promoção exclusiva da Black Friday
               </span>
             </div>
