@@ -78,11 +78,9 @@ function App() {
           <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08] max-w-4xl mx-auto text-balance">
             Se você não dominar sua mente, ela <span className="text-wine-shine whitespace-normal break-words">domina você.</span>
           </h1>
-
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Se você sente que luta contra si mesma, é porque sua mente te domina. Eu tenho a solução para virar esse jogo. Está na hora de ensinar sua mente a te seguir e transformar na sua versão que sempre sonhou, mas nunca alcançou...até agora.
+            Se você sente que luta contra si mesma… é porque um padrão escondido está vencendo por você. Ele opera no silêncio, decide no seu lugar e te empurra para os mesmos ciclos que você tenta escapar. Você sente a trava, o aperto, a dúvida, mas nunca vê de onde isso vem. E enquanto esse padrão existir, ele vai continuar controlando seus passos…sem que você perceba que não está no comando.
           </p>
-
           <div className="mb-10 flex justify-center">
             <div className="relative max-w-xs w-full aspect-[9/16] bg-gold-shine p-1 rounded-3xl shadow-2xl">
               <div className="relative w-full h-full bg-black rounded-[22px] overflow-hidden">
@@ -114,16 +112,8 @@ function App() {
       {/* O CIRCUITO DA PROTEÇÃO INVERTIDA */}
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você te <span className="text-wine-shine">sabotando em silêncio.</span></h2>
-          <div className="space-y-6 text-lg md:text-xl text-[#F7F4EE]/90 leading-relaxed mb-12 max-w-3xl mx-auto">
-            <p>Você já reparou que parte de você quer mudar… mas outra parte faz você desistir?</p>
-            <p>
-              Isso acontece porque existe um padrão automático no seu cérebro que entra em ação sempre que você tenta fazer algo que exige energia emocional.
-            </p>
-            <p>Ele foi criado para te proteger de frustrações antigas, mas aprendeu a fazer isso da pior maneira possível:</p>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
+                    <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você te <span className="text-wine-shine">sabotando em silêncio.</span></h2>
+                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
             {[
               { title: 'Te travando', icon: ThumbsDown },
               { title: 'Te drenando', icon: ThumbsDown },
@@ -142,7 +132,7 @@ function App() {
           </div>
 
           <h3 className="font-serif text-3xl md:text-4xl text-[#F7F4EE] mb-4">
-            POR QUE ESSE CIRCUITO EXISTE?
+            PORQUE ESSE CIRCUITO EXISTE?
           </h3>
           <p className="text-lg md:text-xl text-[#F7F4EE]/80 mb-8 max-w-3xl mx-auto">
             Seu cérebro aprendeu, ao longo da vida, que certas emoções como frustração, cobrança, rejeição ou falha são perigosas.
@@ -236,7 +226,7 @@ function App() {
             <Brain className="w-12 h-12 text-gold" />
           </div>
           <h2 className="font-serif text-4xl md:text-5xl text-gold mb-8 tracking-wide">
-            POR QUE ISSO FUNCIONA?
+            POR QUE NEUROCIÊNCIA É A SOLUÇÃO?
           </h2>
 
           <div className="grid md:grid-cols-3 gap-6 text-left">
@@ -276,7 +266,7 @@ function App() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-16">
-            O QUE VOCÊ VAI RECEBER
+            O QUE VEM NESSE MEGA PACOTE?
           </h2>
           <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mb-10">
             Com esse método, além do produto principal, você levará +7 Bônus Exclusivos juntos:
