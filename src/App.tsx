@@ -76,10 +76,10 @@ function App() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
           <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08] max-w-4xl mx-auto text-balance">
-A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespace-normal break-words">FUNDO DO POÇO</span>
+A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespace-normal break-words">FUNDO DO POÇO</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Se você sente que luta contra si mesma… é porque um padrão escondido está vencendo por você. Ele opera no silêncio, decide no seu lugar e te empurra para os mesmos ciclos que você tenta escapar. Você sente o aperto, a dúvida, mas nunca vê de onde isso vem. E enquanto esse padrão existir, ele vai continuar controlando seus passos…sem que você perceba que não está no comando.
+            Se você sente que luta contra si mesma... é porque um padrão escondido está vencendo por você. Ele opera no silêncio, decide no seu lugar e te empurra para os mesmos ciclos dos quais você tenta escapar. Você sente o aperto, a dúvida, mas nunca vê de onde isso vem. E enquanto esse padrão existir, ele vai continuar controlando seus passos... sem que você perceba que não está no comando.
           </p>
           <div className="mb-10 flex justify-center">
             <div className="relative max-w-xs w-full aspect-[9/16] bg-gold-shine p-1 rounded-3xl shadow-2xl">
@@ -90,6 +90,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespac
                   src="/VSL.mp4"
                   autoPlay
                   loop
+                  muted={isMuted}
                   playsInline
                   onTimeUpdate={handleTimeUpdate}
                 />
@@ -119,7 +120,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespac
               { title: 'Te drenando', icon: ThumbsDown },
               { title: 'Te fazendo procrastinar', icon: ThumbsDown },
               { title: 'Te convencendo a desistir', icon: ThumbsDown },
-              { title: 'Te jogando para Velhos Hábitos', icon: ThumbsDown },
+              { title: 'Te jogando para velhos hábitos', icon: ThumbsDown },
             ].map((item, index) => (
               <div
                 key={index}
@@ -132,11 +133,11 @@ A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespac
           </div>
 
           <h3 className="font-serif text-3xl md:text-4xl text-[#F7F4EE] mb-4">
-            O QUE ESTÁ TE ATRAPALHANDO A PROGREDIR?
+            O QUE TE IMPEDE DE PROGREDIR?
           </h3>
           <p className="text-lg md:text-xl text-[#F7F4EE]/80 mb-8 max-w-3xl mx-auto">
             Seu cérebro aprendeu, ao longo da vida, que certas emoções como frustração, cobrança, rejeição ou falha são perigosas.
-            Para evitar que você “sofra de novo”, ele cria atalhos emocionais:
+            Para evitar que você "sofra de novo", ele cria atalhos emocionais:
           </p>
 
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
@@ -159,7 +160,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespac
 
           <div className="mt-12 text-center space-y-6 text-lg md:text-xl text-[#F7F4EE]/85 max-w-4xl mx-auto">
             <p>
-              Ele te protege do que já passou e te impede do que você quer construir. Faz isso do pior jeito possível: te paralisando, te drenando, te acovardando. E o mais cruel é que isso não acontece porque você “quer”. Acontece por causa de um processo oculto dentro da sua mente chamado o Circuito da Proteção Invertida, um padrão automático que tenta evitar dor, mas acaba te prendendo nos mesmos ciclos que destroem sua evolução. Mas existe um jeito de corrigir isso, e a neurociência utiliza a neuroplasticidade para fazer seu cérebro atingir a reconexão neural: quando você treina o cérebro a responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional.
+              Ele te protege do que já passou e te impede de construir o que você quer. Faz isso do pior jeito possível: paralisando, drenando e acovardando você. E o mais cruel é que isso não acontece porque você "quer". Acontece por causa de um processo oculto em sua mente, chamado "Circuito da Proteção Invertida" um padrão automático que tenta evitar a dor, mas acaba te prendendo nos mesmos ciclos que destroem sua evolução. Mas existe uma forma de corrigir isso, e a neurociência utiliza a neuroplasticidade para ajudar seu cérebro a atingir a reconexão neural: quando você treina seu cérebro para responder de outra forma, criando novos caminhos, novas respostas e um novo comportamento emocional.
             </p>
             <div className="grid md:grid-cols-2 gap-4">
               {[
@@ -180,7 +181,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCE DO <span className="text-wine-shine whitespac
               ))}
             </div>
             <p className="text-wine-shine font-semibold text-xl">
-              Esse método não é apenas um método comum, é um método pensado para você acabar de vez com esse inimigo invisível que está acabando com sua vida aos poucos.
+              Este método não é apenas um método comum. É um método pensado para você acabar de vez com esse inimigo invisível que está minando sua vida aos poucos.
             </p>
           </div>
 
