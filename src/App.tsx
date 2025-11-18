@@ -69,14 +69,14 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-black via-[#1a1a1a] to-black text-white overflow-x-hidden responsive-copy">
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(240,213,140,0.1),transparent_50%)]" />
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
-          <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08]">
-            A autossabotagem sempre vai te dominar, até <span className="text-gold-shine inline-block">você aprender a vencer sua mente.</span>
+          <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08] max-w-4xl mx-auto text-balance">
+            A autossabotagem sempre vai te dominar, até <span className="text-gold-shine whitespace-normal break-words">você aprender a vencer sua mente.</span>
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
@@ -309,10 +309,11 @@ function App() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { label: 'Duração', value: '21 dias' },
+              { label: 'Duração', value: '21 dias de treinamento intensivo' },
+              { label: 'Resultados', value: '4 a 7 dias' },
               { label: 'Tempo por dia', value: '5–10 minutos' },
               { label: 'Formato', value: 'Exercícios, áudios e passos guiados' },
-              { label: 'Objetivo', value: 'Quebrar padrões de autossabotagem na raiz' },
+              { label: 'Objetivo', value: 'Quebrar padrões de autossabotagem' },
             ].map((item, index) => (
               <div
                 key={index}
@@ -334,27 +335,27 @@ function App() {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine overflow-hidden">
               <img
                 src="/1.PNG"
                 alt="Depoimento 1"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine overflow-hidden">
               <img
                 src="/2.PNG"
                 alt="Depoimento 2"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine overflow-hidden">
               <img
                 src="/3.PNG"
                 alt="Depoimento 3"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
             </div>
