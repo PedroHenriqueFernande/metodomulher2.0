@@ -584,6 +584,16 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
             </div>
 
             <CTAButton />
+            <div className="flex flex-wrap justify-center items-center gap-8 mt-8">
+                <div className="flex items-center gap-2 text-gold">
+                    <Shield className="w-6 h-6" />
+                    <span>Compra Segura</span>
+                </div>
+                <div className="flex items-center gap-2 text-gold">
+                    <Check className="w-6 h-6" />
+                    <span>Acesso Imediato</span>
+                </div>
+            </div>
             <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mt-4">
               A única coisa entre você e a mudança é um clique, não deixe passar essa chance.
             </p>
