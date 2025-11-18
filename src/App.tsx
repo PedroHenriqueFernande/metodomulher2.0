@@ -69,9 +69,9 @@ function App() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-radial from-[#D8C28A]/10 via-black to-black">
+      <section className="relative min-h-screen flex items-center justify-center px-6 py-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(216,194,138,0.1),transparent_50%)]" />
 
         <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -113,7 +113,7 @@ function App() {
       </section>
 
       {/* O CIRCUITO DA PROTEÇÃO INVERTIDA */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">O Circuito da Proteção Invertida</h2>
           <div className="space-y-6 text-lg md:text-xl text-[#F7F4EE]/90 leading-relaxed mb-12 max-w-3xl mx-auto">
@@ -205,7 +205,7 @@ function App() {
       </section>
 
       {/* A CHAVE PARA A REPROGRAMAÇÃO MENTAL */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-6xl text-[#F7F4EE] mb-8">
             A CHAVE PARA A REPROGRAMAÇÃO MENTAL
@@ -232,7 +232,7 @@ function App() {
       <AboutJuliana />
 
       {/* POR QUE ISSO FUNCIONA */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex justify-center mb-6">
             <Brain className="w-12 h-12 text-gold" />
@@ -275,7 +275,7 @@ function App() {
       </section>
 
       {/* O QUE VOCÊ VAI RECEBER */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-16">
             O QUE VOCÊ VAI RECEBER
@@ -302,7 +302,7 @@ function App() {
       </section>
 
       {/* COMO FUNCIONA NA PRÁTICA */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             COMO FUNCIONA NA PRÁTICA?
@@ -328,34 +328,43 @@ function App() {
       </section>
 
       {/* DEPOIMENTOS */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-16">
             O QUE ELAS ESTÃO DIZENDO
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Testimonial
-              name="Mariana S."
-              time="há 2 dias"
-              text="Eu não acreditava que ia funcionar comigo. Mas em 10 dias eu já consegui parar de me sabotar antes das entrevistas. Hoje tenho clareza."
-            />
-            <Testimonial
-              name="Rafaela L."
-              time="há 5 dias"
-              text="Sempre achei que o problema era eu. Agora sei que era só a minha mente me protegendo do jeito errado. Esse método mudou tudo."
-            />
-            <Testimonial
-              name="Camila P."
-              time="há 1 semana"
-              text="Finalmente consigo terminar o que começo. Parece simples, mas pra mim era impossível. Valeu cada centavo."
-            />
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
+              <img
+                src="/prova 1.PNG.png"
+                alt="Depoimento 1"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
+              <img
+                src="/prova 2.png"
+                alt="Depoimento 2"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#1A1A1A] to-[#252525] rounded-2xl border border-gold-shine flex items-center justify-center overflow-hidden">
+              <img
+                src="/prova 3.png"
+                alt="Depoimento 3"
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </section>
 
       {/* PRÉVIA */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-12">
             UMA PRÉVIA DO QUE TE ESPERA
@@ -384,7 +393,7 @@ function App() {
       </section>
 
       {/* PARA QUEM É */}
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             PARA QUEM ESTE MÉTODO FOI FEITO
@@ -410,7 +419,7 @@ function App() {
       </section>
 
       {/* OFERTA/B?NUS/VALOR/FAQ/FOOTER (mantidos) */}
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="space-y-10 animate-pulse-scale">
             <div className="text-center">
@@ -448,7 +457,7 @@ function App() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
             VALOR TOTAL DA TRANSFORMAÇÃO
@@ -485,7 +494,7 @@ function App() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-8">
             POR QUE ESTA OFERTA ACABA HOJE?
@@ -497,7 +506,7 @@ function App() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="p-1 rounded-3xl mb-12 bg-gold-shine opacity-10">
             <div className="bg-black p-8 md:p-12 rounded-[22px] text-center">
@@ -515,7 +524,7 @@ function App() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gradient-to-b from-black to-[#0A0A0A]">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-[#1A1A1A] to-[#252525] p-8 md:p-12 rounded-3xl border border-[#D8C28A]/20 text-center">
             <Shield className="w-20 h-20 text-gold mx-auto mb-6" />
@@ -533,7 +542,7 @@ function App() {
 
       <FAQ />
 
-      <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+      <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-12">
             Está pronta para retomar o controle?
@@ -554,7 +563,7 @@ function App() {
         </div>
       </section>
 
-      <footer className="py-12 px-6 bg-black border-t border-gold-shine/10">
+      <footer className="py-12 px-6 bg-transparent border-t border-gold-shine/10">
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[#F7F4EE]/60 text-sm mb-4">
             © 2025 A Chave da Reprogramação Mental. Todos os direitos reservados.

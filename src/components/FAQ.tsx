@@ -64,7 +64,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-black via-[#0A0A0A] to-black">
+    <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-12">
           Perguntas Frequentes

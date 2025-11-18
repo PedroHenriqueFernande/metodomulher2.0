@@ -4,7 +4,7 @@ const AboutJuliana = () => {
   const fullText = "Meu nome  Juliana, tenho 32 e sinceramente, eu andava tão cansada. Por muito tempo, acreditei que a tristeza e o vazio era algo que nunca ia sumir de dentro de mim. Tinha medo de fazer planos, de nada sair da maneira certa. Até entender que era a minha mente tentando me proteger, mas na verdade, ela só estava me destruindo. Foi quando mergulhei na neurociência e estudando, descobri como reprogramar esses padrões. Dessa forma criei o método que transformou a minha vida e hoje já ajudou mais de 5.000 mulheres a retomarem o controle da própria mente. Você não precisa lutar contra si mesma. Só precisa aprender a reprogramar a sua mente. Venha comigo nessa jornada e acabe de maneira definitiva com tudo isso!";
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-[#0A0A0A] to-black">
+    <section className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] text-center mb-8">
           SIM, EU JÁ ME SABOTEI. MAS FOI DO CAOS QUE NASCEU O MEU RECOMEÇO.
