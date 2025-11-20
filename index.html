@@ -58,6 +58,107 @@
   </script>
   <!-- End Meta Pixel Code -->
 
+  <!-- Desktop Block & Anti-Inspection Protection -->
+  <script>
+    (function () {
+      // Detecta se é desktop baseado no tamanho da tela
+      function isDesktop() {
+        return window.innerWidth >= 1024;
+      }
+
+      // Bloqueia desktop mostrando tela branca
+      if (isDesktop()) {
+        // Injeta CSS para garantir tela branca
+        const style = document.createElement('style');
+        style.textContent = `
+          * {
+            display: none !important;
+            visibility: hidden !important;
+          }
+          html, body {
+            background: white !important;
+            display: block !important;
+            visibility: visible !important;
+          }
+        `;
+        document.head.appendChild(style);
+
+        // Bloqueia execução de scripts
+        window.addEventListener('DOMContentLoaded', function (e) {
+          e.stopImmediatePropagation();
+        }, true);
+
+        // Limpa o body quando estiver pronto
+        document.addEventListener('DOMContentLoaded', function () {
+          document.body.innerHTML = '';
+          document.body.style.cssText = 'background: white !important; overflow: hidden !important;';
+
+          // Esconde o root
+          const root = document.getElementById('root');
+          if (root) {
+            root.remove();
+          }
+        });
+
+        // Monitora e remove qualquer conteúdo adicionado
+        const observer = new MutationObserver(() => {
+          if (document.body.children.length > 0) {
+            document.body.innerHTML = '';
+          }
+        });
+
+        // Inicia observação quando o DOM estiver pronto
+        if (document.body) {
+          observer.observe(document.body, { childList: true, subtree: true });
+        } else {
+          document.addEventListener('DOMContentLoaded', function () {
+            observer.observe(document.body, { childList: true, subtree: true });
+          });
+        }
+      }
+
+      // Desabilita clique com botão direito
+      document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+        return false;
+      }, false);
+
+      // Desabilita atalhos de teclado comuns para DevTools
+      document.addEventListener('keydown', function (e) {
+        // F12
+        if (e.keyCode === 123) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+        if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+          e.preventDefault();
+          return false;
+        }
+        // Ctrl+U (view source)
+        if (e.ctrlKey && e.keyCode === 85) {
+          e.preventDefault();
+          return false;
+        }
+      }, false);
+
+      // Monitora redimensionamento da janela
+      window.addEventListener('resize', function () {
+        if (isDesktop()) {
+          location.reload();
+        }
+      });
+
+      // Detecta se DevTools está aberto
+      setInterval(function () {
+        if (isDesktop() && (window.outerWidth - window.innerWidth > 160 ||
+          window.outerHeight - window.innerHeight > 160)) {
+          document.body.innerHTML = '';
+        }
+      }, 1000);
+    })();
+  </script>
+  <!-- End Desktop Block & Anti-Inspection Protection -->
 
 </head>
 
