@@ -39,6 +39,23 @@ function App() {
     };
   }, []);
 
+  // Auto-play video on mount for mobile devices
+  useEffect(() => {
+    const playVideo = async () => {
+      if (videoRef.current) {
+        try {
+          await videoRef.current.play();
+          setIsPlaying(true);
+        } catch (error) {
+          console.log('Autoplay prevented:', error);
+          // Autoplay was prevented, user will need to click play
+        }
+      }
+    };
+
+    playVideo();
+  }, []);
+
   const handleTimeUpdate = () => {
     if (videoRef.current) {
       const { currentTime, duration } = videoRef.current;
@@ -108,7 +125,7 @@ function App() {
 
         <div className="relative z-10 w-full max-w-6xl mx-auto text-center px-2">
           <h1 className="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-[#F7F4EE] mb-8 leading-[1.08] max-w-4xl mx-auto text-balance">
-A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespace-normal break-words">FUNDO DO POÇO</span>
+            A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespace-normal break-words">FUNDO DO POÇO</span>
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl text-[#F7F4EE]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
             Se você sente que luta contra si mesma... é porque um padrão escondido está vencendo por você. Ele opera no silêncio, decide no seu lugar e te empurra para os mesmos ciclos dos quais você tenta escapar. Você sente o aperto, a dúvida, mas nunca vê de onde isso vem. E enquanto esse padrão existir, ele vai continuar controlando seus passos... sem que você perceba que não está no comando.
@@ -120,10 +137,15 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
                   ref={videoRef}
                   className="w-full h-full object-cover"
                   src="/VSL.mp4"
+                  autoPlay
+                  loop
                   muted={isMuted}
                   playsInline
-                  preload="metadata"
+                  webkit-playsinline="true"
+                  preload="auto"
                   onTimeUpdate={handleTimeUpdate}
+                  onPlay={() => setIsPlaying(true)}
+                  onPause={() => setIsPlaying(false)}
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <button onClick={togglePlay} className="text-white bg-black/50 rounded-full p-4">
@@ -149,8 +171,8 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
       {/* O CIRCUITO DA PROTEÇÃO INVERTIDA */}
       <section className="py-20 px-6 fade-in-section">
         <div className="max-w-5xl mx-auto text-center">
-                    <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você te <span className="text-wine-shine">sabotando em silêncio.</span></h2>
-                    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
+          <h2 className="font-serif text-4xl md:text-5xl text-[#F7F4EE] mb-6">A culpa não é sua. É algo dentro de você te <span className="text-wine-shine">sabotando em silêncio.</span></h2>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 text-left mb-12">
             {[
               { title: 'Te travando', icon: ThumbsDown },
               { title: 'Te drenando', icon: ThumbsDown },
@@ -244,7 +266,7 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
           </h2>
           <div className="space-y-6 text-lg md:text-xl text-[#F7F4EE]/90 leading-relaxed mb-12">
             <p>
-              Você não está travada. É a sua mente te protegendo do jeito errado: ela te sabota, drena sua energia e te faz acreditar que nunca vai vencer. Isso não é fraqueza, entenda que não é culpa sua. É um padrão automático que age antes de você perceber. 
+              Você não está travada. É a sua mente te protegendo do jeito errado: ela te sabota, drena sua energia e te faz acreditar que nunca vai vencer. Isso não é fraqueza, entenda que não é culpa sua. É um padrão automático que age antes de você perceber.
             </p>
 
             <p>
@@ -576,14 +598,14 @@ A NEUROPLASTICIDADE VAI TIRAR VOCÊ DO <span className="text-wine-shine whitespa
 
             <CTAButton />
             <div className="flex flex-wrap justify-center items-center gap-8 mt-8">
-                <div className="flex items-center gap-2 text-gold">
-                    <Shield className="w-6 h-6" />
-                    <span>Compra Segura</span>
-                </div>
-                <div className="flex items-center gap-2 text-gold">
-                    <Check className="w-6 h-6" />
-                    <span>Acesso Imediato</span>
-                </div>
+              <div className="flex items-center gap-2 text-gold">
+                <Shield className="w-6 h-6" />
+                <span>Compra Segura</span>
+              </div>
+              <div className="flex items-center gap-2 text-gold">
+                <Check className="w-6 h-6" />
+                <span>Acesso Imediato</span>
+              </div>
             </div>
             <p className="text-center text-lg md:text-xl text-[#F7F4EE]/80 mt-4">
               A única coisa entre você e a mudança é um clique, não deixe passar essa chance.
