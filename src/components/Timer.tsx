@@ -46,7 +46,7 @@ export default function Timer() {
       {[
         { label: 'HORAS', value: timeLeft.hours },
         { label: 'MINUTOS', value: timeLeft.minutes },
-        { label: 'SEGUN-DOS', value: timeLeft.seconds },
+        { label: 'SEGUNDOS', value: timeLeft.seconds },
       ].map((item, idx) => (
         <div key={idx} className="flex flex-col items-center">
           <div className="bg-gold-shine text-black font-bold text-xl md:text-4xl px-3 py-2 md:px-6 md:py-4 rounded-lg min-w-[60px] md:min-w-[80px] text-center">
