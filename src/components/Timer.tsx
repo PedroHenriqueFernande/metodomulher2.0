@@ -42,17 +42,17 @@ export default function Timer() {
   }, []);
 
   return (
-    <div className="flex items-center justify-center gap-4">
+    <div className="flex items-center justify-center gap-2 md:gap-4">
       {[
         { label: 'HORAS', value: timeLeft.hours },
         { label: 'MINUTOS', value: timeLeft.minutes },
-        { label: 'SEGUNDOS', value: timeLeft.seconds },
+        { label: 'SEGUN-DOS', value: timeLeft.seconds },
       ].map((item, idx) => (
         <div key={idx} className="flex flex-col items-center">
-          <div className="bg-gold-shine text-black font-bold text-3xl md:text-4xl px-6 py-4 rounded-lg min-w-[80px] text-center">
+          <div className="bg-gold-shine text-black font-bold text-xl md:text-4xl px-3 py-2 md:px-6 md:py-4 rounded-lg min-w-[60px] md:min-w-[80px] text-center">
             {String(item.value).padStart(2, '0')}
           </div>
-          <span className="text-gold text-xs mt-2 font-medium tracking-widest">
+          <span className="text-gold text-[10px] md:text-xs mt-1 md:mt-2 font-medium tracking-wider md:tracking-widest">
             {item.label}
           </span>
         </div>
