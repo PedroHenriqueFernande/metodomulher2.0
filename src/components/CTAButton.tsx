@@ -8,7 +8,7 @@ interface CTAButtonProps {
 export default function CTAButton({ showSubtext = false, className = '' }: CTAButtonProps) {
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      <a href="https://pay.lowify.com.br/checkout.php?product_id=H1pWzs" target="_blank" rel="noopener noreferrer" className="w-full max-w-md">
+      <a href="https://pagamento.xn--achavedareprogramaaomental-8jc.store/PsTSk9on64txioQX7lSZ" target="_blank" rel="noopener noreferrer" className="w-full max-w-md">
         <button className="group relative bg-gold-shine text-black font-bold text-lg md:text-xl px-8 md:px-12 py-5 md:py-6 rounded-xl shadow-2xl hover:shadow-[0_0_40px_rgba(240,213,140,0.55)] transition-all duration-300 hover:scale-105 w-full overflow-hidden animation-pulse-subtle">
           <span className="flex items-center justify-center gap-3 relative z-10">
             <Crown className="w-6 h-6" />
