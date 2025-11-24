@@ -58,65 +58,132 @@
   </script>
   <!-- End Meta Pixel Code -->
 
-  <!-- Desktop Block & Anti-Inspection Protection -->
+  <!-- VSL Page Cloaking Script -->
+  <script>
+    /**
+     * VSL Page Cloaking Script
+     * Desktop: Blocked
+     * Mobile: Allowed only with correct URL parameter
+     */
+
+    (function () {
+      'use strict';
+
+      // ========================================
+      // CONFIGURAÇÃO - ALTERE AQUI
+      // ========================================
+
+      // Parâmetro da URL que libera o acesso no mobile
+      // Exemplo: ?key=segredo123&fbclid=fbclid
+      const URL_PARAM_NAME = 'key';
+      const URL_PARAM_VALUE = 'segredo123';
+
+      // ========================================
+      // NÃO ALTERE DAQUI PRA BAIXO
+      // ========================================
+
+      /**
+       * Detecta se é dispositivo mobile
+       */
+      function isMobile() {
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const mobileRegex = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i;
+        const screenWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        return mobileRegex.test(userAgent.toLowerCase()) || screenWidth <= 768;
+      }
+
+      /**
+       * Pega parâmetro da URL
+       */
+      function getURLParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+      }
+
+      /**
+       * Esconde todo o conteúdo
+       */
+      function hideContent() {
+        document.body.style.display = 'none';
+        document.documentElement.style.display = 'none';
+      }
+
+      /**
+       * Mostra mensagem de acesso negado
+       */
+      function showAccessDenied() {
+        document.body.innerHTML = '';
+        document.body.style.display = 'block';
+        document.documentElement.style.display = 'block';
+        document.body.style.background = '#0A0A0A';
+        document.body.style.color = '#F2F2F2';
+        document.body.style.fontFamily = 'Inter, sans-serif';
+        document.body.style.padding = '2rem';
+        document.body.style.textAlign = 'center';
+        document.body.style.minHeight = '100vh';
+        document.body.style.display = 'flex';
+        document.body.style.alignItems = 'center';
+        document.body.style.justifyContent = 'center';
+
+        const message = document.createElement('div');
+        message.innerHTML = '<h1 style="font-size: 2rem; margin-bottom: 1rem;">Acesso Restrito</h1><p style="color: #C4C4C4;">Esta página não está disponível no momento.</p>';
+        document.body.appendChild(message);
+      }
+
+      /**
+       * Aplica o cloaking
+       */
+      function applyCloaking() {
+        const mobile = isMobile();
+        const keyValue = getURLParameter(URL_PARAM_NAME);
+
+        // Aceita tanto "segredo123" quanto "segredo=123" (por causa do encoding do FB)
+        const hasValidKey = keyValue === URL_PARAM_VALUE || keyValue === 'segredo=123';
+
+        console.log('VSL Cloaking Debug:', {
+          isMobile: mobile,
+          hasKey: hasValidKey,
+          urlParam: keyValue,
+          expectedValue: URL_PARAM_VALUE
+        });
+
+        // REGRA 1: Desktop = sempre esconde
+        if (!mobile) {
+          console.log('Desktop detectado - Escondendo conteúdo');
+          hideContent();
+          return;
+        }
+
+        // REGRA 2: Mobile sem chave correta = esconde ou mostra mensagem
+        if (mobile && !hasValidKey) {
+          console.log('Mobile sem chave válida - Bloqueando acesso');
+          showAccessDenied();
+          return;
+        }
+
+        // REGRA 3: Mobile com chave correta = mostra normalmente
+        console.log('Mobile com chave válida - Acesso liberado');
+        document.body.style.display = 'block';
+        document.documentElement.style.display = 'block';
+      }
+
+      // Executa o mais cedo possível
+      if (document.readyState === 'loading') {
+        // Esconde imediatamente para evitar flash
+        document.documentElement.style.display = 'none';
+
+        document.addEventListener('DOMContentLoaded', applyCloaking);
+      } else {
+        applyCloaking();
+      }
+
+    })();
+  </script>
+
+  <!-- Anti-Inspection Protection -->
   <script>
     (function () {
-      // Detecta se é desktop baseado no tamanho da tela
-      function isDesktop() {
-        return window.innerWidth >= 1024;
-      }
-
-      // Bloqueia desktop mostrando tela branca
-      if (isDesktop()) {
-        // Injeta CSS para garantir tela branca
-        const style = document.createElement('style');
-        style.textContent = `
-          * {
-            display: none !important;
-            visibility: hidden !important;
-          }
-          html, body {
-            background: white !important;
-            display: block !important;
-            visibility: visible !important;
-          }
-        `;
-        document.head.appendChild(style);
-
-        // Bloqueia execução de scripts
-        window.addEventListener('DOMContentLoaded', function (e) {
-          e.stopImmediatePropagation();
-        }, true);
-
-        // Limpa o body quando estiver pronto
-        document.addEventListener('DOMContentLoaded', function () {
-          document.body.innerHTML = '';
-          document.body.style.cssText = 'background: white !important; overflow: hidden !important;';
-
-          // Esconde o root
-          const root = document.getElementById('root');
-          if (root) {
-            root.remove();
-          }
-        });
-
-        // Monitora e remove qualquer conteúdo adicionado
-        const observer = new MutationObserver(() => {
-          if (document.body.children.length > 0) {
-            document.body.innerHTML = '';
-          }
-        });
-
-        // Inicia observação quando o DOM estiver pronto
-        if (document.body) {
-          observer.observe(document.body, { childList: true, subtree: true });
-        } else {
-          document.addEventListener('DOMContentLoaded', function () {
-            observer.observe(document.body, { childList: true, subtree: true });
-          });
-        }
-      }
-
       // Desabilita clique com botão direito
       document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
@@ -141,24 +208,9 @@
           return false;
         }
       }, false);
-
-      // Monitora redimensionamento da janela
-      window.addEventListener('resize', function () {
-        if (isDesktop()) {
-          location.reload();
-        }
-      });
-
-      // Detecta se DevTools está aberto
-      setInterval(function () {
-        if (isDesktop() && (window.outerWidth - window.innerWidth > 160 ||
-          window.outerHeight - window.innerHeight > 160)) {
-          document.body.innerHTML = '';
-        }
-      }, 1000);
     })();
   </script>
-  <!-- End Desktop Block & Anti-Inspection Protection -->
+  <!-- End Anti-Inspection Protection -->
 
 </head>
 
